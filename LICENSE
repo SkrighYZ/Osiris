@@ -1,5 +1,12 @@
 MIT License
 
+Portions of this software are copyright of their respective authors and released
+under the MIT license:
+- SimCLR, Copyright (c) 2020 Janne Spijkervet
+- MoCo, Copyright (c) Meta Platforms, Inc. and affiliates.
+- BarlowTwins, Copyright (c) Facebook, Inc. and its affiliates.
+- UCL, Copyright (c) 2022 Divyam Madaan
+
 Copyright (c) 2024 Yipeng Zhang
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
