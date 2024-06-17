@@ -85,13 +85,13 @@ num_tasks=1
 - CIFAR-100
 
 ```bash
-torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --world_size $NUM_TRAINERS --dataset cifar100 --model simclr --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR --order_fp $ROOT_DIR/Osiris/data_order/c100_random_order.pkl --learning_rate_weights 0.03 --learning_rate_biases 0.03 --weight_decay 5e-4 --log_freq 200 --eval_freq 1955 --save_dir $out_dir --distributed
+torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --world_size $NUM_TRAINERS --dataset cifar100 --model simclr --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR --order_fp $ROOT_DIR/Osiris/data_order/c100_random_order.pkl --lr 0.03 --weight_decay 5e-4 --log_freq 200 --eval_freq 1955 --save_dir $out_dir --distributed
 ```
 
 - Tiny-ImageNet
 
 ```bash
-torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset tinyimagenet --model simclr --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR --order_fp $ROOT_DIR/Osiris/data_order/t200_structured_order.pkl --learning_rate_weights 0.03 --learning_rate_biases 0.03 --weight_decay 5e-4 --log_freq 200 --eval_freq 7820 --save_dir $out_dir --distributed
+torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset tinyimagenet --model simclr --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR --order_fp $ROOT_DIR/Osiris/data_order/t200_structured_order.pkl --lr 0.03 --weight_decay 5e-4 --log_freq 200 --eval_freq 7820 --save_dir $out_dir --distributed
 ```
 
 
@@ -110,19 +110,19 @@ order_fp=$ROOT_DIR/Osiris/data_order/c100_structured_order.pkl
 - FT
 
 ```bash
-torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset cifar100 --model simclr --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DI --order_fp $order_fp --learning_rate_weights 0.03 --learning_rate_biases 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --distributed
+torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset cifar100 --model simclr --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DI --order_fp $order_fp --lr 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --distributed
 ```
 
 - Osiris-R
 
 ```bash
-torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset cifar100 --model osiris-r --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR --order_fp $order_fp --learning_rate_weights 0.03 --learning_rate_biases 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --buffer_size 500 --p 0.75 --distributed
+torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset cifar100 --model osiris-r --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR --order_fp $order_fp --lr 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --buffer_size 500 --p 0.75 --distributed
 ```
 
 - Osiris-D
 
 ```bash
-torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset cifar100 --model osiris-d --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR --order_fp $order_fp --learning_rate_weights 0.03 --learning_rate_biases 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --buffer_size 500 --p 0.75 --distributed
+torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset cifar100 --model osiris-d --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR --order_fp $order_fp --lr 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --buffer_size 500 --p 0.75 --distributed
 ```
 
 
@@ -137,19 +137,19 @@ order_fp=$ROOT_DIR/Osiris/data_order/t200_structured_order.pkl
 - FT
 
 ```bash
-torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset tinyimagenet --model simclr --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR --order_fp $order_fp --learning_rate_weights 0.03 --learning_rate_biases 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --t200_paths $ROOT_DIR/Osiris/data_order/t200_paths.txt --distributed
+torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset tinyimagenet --model simclr --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR --order_fp $order_fp --lr 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --t200_paths $ROOT_DIR/Osiris/data_order/t200_paths.txt --distributed
 ```
 
 - Osiris-R
 
 ```bash
-torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset tinyimagenet --model osiris-r --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR -order_fp $order_fp --learning_rate_weights 0.03 --learning_rate_biases 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --buffer_size 500 --p 0.75 --t200_paths $ROOT_DIR/Osiris/data_order/t200_paths.txt --distributed
+torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset tinyimagenet --model osiris-r --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR -order_fp $order_fp --lr 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --buffer_size 500 --p 0.75 --t200_paths $ROOT_DIR/Osiris/data_order/t200_paths.txt --distributed
 ```
 
 - Osiris-D
 
 ```bash
-torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset tinyimagenet --model osiris-d --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR -order_fp $order_fp --learning_rate_weights 0.03 --learning_rate_biases 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --buffer_size 500 --p 0.75 --t200_paths $ROOT_DIR/Osiris/data_order/t200_paths.txt --distributed
+torchrun --master_port=$MASTER_PORT --master_addr=$MASTER_ADDR train.py --dataset tinyimagenet --model osiris-d --num_tasks $num_tasks --epochs 200 --batch_size 256 --data_dir $DATA_DIR -order_fp $order_fp --lr 0.03 --weight_decay 5e-4 --log_freq 200 --save_dir $out_dir --buffer_size 500 --p 0.75 --t200_paths $ROOT_DIR/Osiris/data_order/t200_paths.txt --distributed
 ```
 
 ## Evaluation
